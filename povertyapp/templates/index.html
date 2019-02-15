@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>World Income Inequality</title>
+  <!--import script files needed from plotly and bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  <!--navbar links-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#">World Income Inequality</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse"
+   data-target="#navbarTogglerDemo02"
+   aria-controls="navbarTogglerDemo02" aria-expanded="false"
+   aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+       <li class="nav-item">
+         <a class="nav-link" href="https://rebeccaebarnes.github.io/" rel="noopener noreferrer">Home</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="https://rebeccaebarnes.github.io/portfolio/" rel="noopener noreferrer">My Profile</a>
+       </li>
+     </ul>
+   </div>
+  </nav>
+  <!--main body-->
+  <div class="row">
+    <!--side panel-->
+    <div class="col-2 text-center bg-secondary" id="sidebar">
+      <div class="row ml-3 mt-3 pr-3">
+        <p>All data was obtained from <br><a href="https://data.worldbank.org/" target="blank" rel="noopener noreferrer" style="color: #cccccc">World Bank Open Data</a> <br> reports for "Income share by highest and lowest 10%".</p>
+        <p><br>Information about impacts of income inequality was obtained from the IMF report: <br> <a href="https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2016/12/31/Causes-and-Consequences-of-Income-Inequality-A-Global-Perspective-42986" target="blank" rel="noopener noreferrer" style="color: #cccccc">Causes and Consequences of Income Inequality : A Global Perspective</a></a></p>
+      </div>
+    </div>
+    <!--main panel-->
+    <div class="col-10">
+      <!--header image-->
+      <div class="row" id="header-img">
+        <div class="card">
+          <img src="/static/img/shoes_line.jpg" alt="shoes above and below painted yellow line" class="img-fluid">
+          <!--header text-->
+          <div class="card-img-overlay">
+            <div class="row pt-10">
+              <div class="col-6">
+                  <h2 class="card-title text-center text-light" style="line-height:28vw;">
+                      Income Inequality
+                  </h2>
+              </div>
+            </div>
+            <div class="row">
+              <p class="col-12 card-text" style="line-height:4vw;">
+                <br>
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-6 card-text"></div>
+              <div class="col-6 card-text text-center text-light pr-5">
+                  <p style="font-size:1.5vw;">
+                      <br>
+                      An imbalanced distribution of wealth within a country is associated 
+                      with reduced educational and occupational choices for those who are poorest, 
+                      as well as decreased economic growth for the country as a whole. 
+                      <br><br>
+                      Understanding how income distributions differ globablly is one step to addressing this issue.
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--charts-->
+      <!--current status-->
+      <div class="row my-5" id="current-status">
+        <div class="col-12 pl-5 mb-2">
+          <h4>What does income inequality look like globally?</h4>
+        </div>
+        <!--first chart-->
+        <div class="col-10 ml-3" id="first-chart">
+          <div id="{{ids[0]}}"></div>
+        </div>
+      </div>
+      <div class="row bg-dark" id="first-chart-text">
+        <div class="col-6 pt-5 px-5 text-light">
+            <h5 class="text-light">How do we measure income inequality?</h5>
+            <p>
+              <br>
+              One of the ways we can talk about income inequality is to look at the difference in the share of income between those in the top 10% of earners, and those in the bottom 10% of earners.
+            </p>
+            <p>
+              In 2013, the largest difference in income share was in Brazil. 
+              Other South American countries were close behind.
+            </p>
+            <p>
+              The smallest differences were found in Europe; Ukraine, Iceland, and Norway had the smallest differences.
+            </p>
+        </div>
+        <div class="col-6">
+          <img src="/static/img/flower_crack.jpg" alt="flower in crack in road" class="img-fluid">
+          </div>
+        </div>
+        <!--change over time-->
+        <div class="row my-4" id="change-over-time">
+          <div class="col-12 pl-5">
+            <h4>How has income inequality changed over time?</h4>
+          </div>
+        </div>
+        <!--second chart-->
+        <div class="row mt-1" id="second-chart">
+          <div class="col-7 px-3">
+            <div id="{{ids[1]}}"></div>
+          </div>
+          <div class="col-5 px-5 pt-5 text-center">
+            <p><br><br><br>For countries with the highest income inequality, the difference between the income share of the top 10% and the bottom 10% has decreased over time.</p>
+            <p>The major exception to this is Zambia, which has shown an increasing difference in income equality.</p>
+          </div>
+        </div>
+        <!--third chart-->
+        <div class="row mt-1" id="third-chart">
+          <div class="col-5 px-5 pt-5 text-center">
+            <p><br><br><br>For countries with the lowest income inequality, there are not consistent trends.</p>
+            <p>Ukraine, Czech Republic and the Slovak republic decreased their difference until 2007 and then stablized. However, the income inequality in Sweden and Denmark has increased over time.</p>
+          </div>
+          <div class="col-7 px-3">
+            <div id="{{ids[2]}}"></div>
+          </div>
+        </div>
+        <!--fourth chart-->
+        <div class="row mt-1" id="fourth-chart">
+          <div class="col-7 px-3">
+              <div id="{{ids[3]}}"></div>
+          </div>
+          <div class="col-5 px-5 pt-5 text-center">
+            <p><br><br><br>The pattern of income inequality in the world's largest economies varies between the countries, but generally, the gap in most of these countries has stabilized from 2010.</p>
+            <p>The United Kingdom, Belgium, and Switzerland have seen the largest decreases over time.</p>
+          </div>
+        </div>
+        <!--call to action-->
+        <div class="row bg-dark" id="call-to-action">
+          <div class="col-6 pt-5 px-5 text-light" id="call-to-action-text">
+            <h5>Why is income inequality important?</h5>
+            <p>
+              <br>
+              As the income gap gets wider, differences between people of differing economic status become more structural, making it harder for lower income people to move out of their situation. 
+            </p>
+            <p>
+              But income inequality should not just be a consideration for those who care about social justice. 
+              Work from the IMF shows that as income inequality becomes worse, a country's economic growth slows. 
+            </p>
+          </div>
+          <div class="col-6" id="call-to-action-img">
+            <img class="img-fluid" src="static/img/justice.jpg" alt="blind justic statue">
+          </div>
+          <div class="col-12 pt-5 pl-5 bg-white">
+            <h4>What does income inequality look like in my country?</h4>
+          </div>
+          <div id="country-filter">
+              {% if scroll %}
+              <script>
+                document.location.hash = '#' + '{{ scroll }}';
+              </script>
+              {% endif %}
+          </div>
+        </div>
+        
+        <!-- dropdown menu for filter -->
+        <div class="row ml-5 my-4">
+		      <div class="dropdown bg-white">
+		  		
+	  		    <button class="btn btn-info btn-lg dropdown-toggle" type="button" 
+	  		    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" 
+	  		    aria-expanded="false">Choose country</button>
+	  		
+	  		    <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton" id="check-boxes">
+              <form class="px-4 py-3" role="form" method="post" action="/" id="form-filter">
+                <div class="row sticky-top ml-3 mb-2 bg-white">
+                  <button id="country_selector" type="submit" class="btn btn-success my-1 sticky-top">Submit</button>
+                </div>
+                
+					      {% for country in all_countries %}
+						    <div class="form-check">
+							    <!-- Check the country filter boxes for all countries submitted from the form -->
+							    {% if country[0] in countries_selected %}
+						  		  <input class="form-check-input country-select" type="radio" name="country_name" value="{{ country[0] }}" id="defaultCheck1-{{country[0]}}" checked>
+                    {% else %}
+						  		  <input class="form-check-input country-select" type="radio" name="country_name" value="{{ country[0] }}" id="defaultCheck1-{{country[0]}}">							
+							    {% endif %}
+					  		  <label class="form-check-label" for="defaultCheck1-{{country[0]}}">{{country[0]}}</label>
+						    </div>
+					      {% endfor %}
+		  			    
+				      </form>
+			      </div>
+          </div>
+        </div>
+        <div class="col-10">
+          <div id="{{ids[4]}}"></div>
+        </div>
+        <div class="row pl-5">
+          <p>*Missing values are filled with the median</p>
+        </div>
+      </div>
+    </div>
+    <div class="row border-top bg-light" style="color:gray; size:1.0vm">
+      <div class="col-3"></div>
+      <div class="col-6 text-center py-5">
+        <p>Created by: Rebecca Barnes <br> Find more of my work at</p>
+        <div class="center-block">
+          <a href="https://github.com/rebeccaebarnes"><img src="static/img/githublogo.png" alt="GitHub logo" style="width:30px"></a>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <!--footer section-->
+    <div id="footer" class="container"></div>
+</body>
+
+<footer>
+
+    <script type="text/javascript">
+        // plots the figure with id
+        // id must match the div id above in the html
+        var figures = {{figuresJSON | safe}};
+        var ids = {{ids | safe}};
+        for(var i in figures) {
+            Plotly.plot(ids[i],
+                figures[i].data,
+                figures[i].layout || {});
+        };
+    </script>
+
+</footer>
+
+</html>
