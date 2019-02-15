@@ -38,43 +38,33 @@
   <div class="row">
     <!--side panel-->
     <div class="col-2 text-center bg-secondary" id="sidebar">
-      <div class="row ml-3 mt-3 pr-3">
+      <div class="row ml-3 mt-3 pr-3" style="font-size: 1vm;">
         <p>All data was obtained from <br><a href="https://data.worldbank.org/" target="blank" rel="noopener noreferrer" style="color: #cccccc">World Bank Open Data</a> <br> reports for "Income share by highest and lowest 10%".</p>
-        <p><br>Information about impacts of income inequality was obtained from the IMF report: <br> <a href="https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2016/12/31/Causes-and-Consequences-of-Income-Inequality-A-Global-Perspective-42986" target="blank" rel="noopener noreferrer" style="color: #cccccc">Causes and Consequences of Income Inequality : A Global Perspective</a></a></p>
+        <p><br>Information about impacts of income inequality was obtained from the IMF: <br> <a href="https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2016/12/31/Causes-and-Consequences-of-Income-Inequality-A-Global-Perspective-42986" target="blank" rel="noopener noreferrer" style="color: #cccccc">Causes and Consequences of Income Inequality : A Global Perspective</a></a></p>
       </div>
     </div>
     <!--main panel-->
     <div class="col-10">
       <!--header image-->
       <div class="row" id="header-img">
-        <div class="card">
-          <img src="/static/img/shoes_line.jpg" alt="shoes above and below painted yellow line" class="img-fluid">
-          <!--header text-->
-          <div class="card-img-overlay">
-            <div class="row pt-10">
-              <div class="col-6">
-                  <h2 class="card-title text-center text-light" style="line-height:28vw;">
-                      Income Inequality
-                  </h2>
-              </div>
+        <div class="card w-100">
+          <img class="card-img-top img-fluid" src="/static/img/shoes_line.jpg" alt="shoes above and below yellow painted line">
+          <div class="row card-img-overlay" id="overlay-title">
+            <div class="col-6 pt-5 px-5 text-light text-center">
+              <h2 class="card-title" style="line-height:8vw;">Income Inequality</h2>
             </div>
-            <div class="row">
-              <p class="col-12 card-text" style="line-height:4vw;">
-                <br>
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-6 card-text"></div>
-              <div class="col-6 card-text text-center text-light pr-5">
-                  <p style="font-size:1.5vw;">
-                      <br>
-                      An imbalanced distribution of wealth within a country is associated 
-                      with reduced educational and occupational choices for those who are poorest, 
-                      as well as decreased economic growth for the country as a whole. 
-                      <br><br>
-                      Understanding how income distributions differ globablly is one step to addressing this issue.
-                  </p>
+            <div class="col-6 card-text text-center text-light pr-5" id="overlay-text">
+              <div class="row h-50">
               </div>
+              <div class="row mt-5 pt-5">
+                <p style="font-size:1.2vw;">
+                  <br>
+                  An imbalanced distribution of wealth within a country is associated with reduced educational and occupational choices for those who are poorest, as well as decreased economic growth for the country as a whole.
+                  <br>
+                  <br>
+                  Understanding how income distributions differ globally is one step to addressing the issue.
+                </p>
+              </div>              
             </div>
           </div>
         </div>
@@ -85,8 +75,8 @@
         <div class="col-12 pl-5 mb-2">
           <h4>What does income inequality look like globally?</h4>
         </div>
-        <!--first chart-->
         <div class="col-10 ml-3" id="first-chart">
+          <!--first chart-->
           <div id="{{ids[0]}}"></div>
         </div>
       </div>
@@ -106,7 +96,7 @@
             </p>
         </div>
         <div class="col-6">
-          <img src="/static/img/flower_crack.jpg" alt="flower in crack in road" class="img-fluid">
+          <img class="img-fluid" src="/static/img/flower_crack.jpg" alt="flower in crack in road">
           </div>
         </div>
         <!--change over time-->
@@ -115,9 +105,9 @@
             <h4>How has income inequality changed over time?</h4>
           </div>
         </div>
-        <!--second chart-->
         <div class="row mt-1" id="second-chart">
           <div class="col-7 px-3">
+            <!--second chart-->
             <div id="{{ids[1]}}"></div>
           </div>
           <div class="col-5 px-5 pt-5 text-center">
@@ -125,20 +115,21 @@
             <p>The major exception to this is Zambia, which has shown an increasing difference in income equality.</p>
           </div>
         </div>
-        <!--third chart-->
+        
         <div class="row mt-1" id="third-chart">
           <div class="col-5 px-5 pt-5 text-center">
             <p><br><br><br>For countries with the lowest income inequality, there are not consistent trends.</p>
             <p>Ukraine, Czech Republic and the Slovak republic decreased their difference until 2007 and then stablized. However, the income inequality in Sweden and Denmark has increased over time.</p>
           </div>
           <div class="col-7 px-3">
+            <!--third chart-->
             <div id="{{ids[2]}}"></div>
           </div>
         </div>
-        <!--fourth chart-->
         <div class="row mt-1" id="fourth-chart">
           <div class="col-7 px-3">
-              <div id="{{ids[3]}}"></div>
+            <!--fourth chart-->
+            <div id="{{ids[3]}}"></div>
           </div>
           <div class="col-5 px-5 pt-5 text-center">
             <p><br><br><br>The pattern of income inequality in the world's largest economies varies between the countries, but generally, the gap in most of these countries has stabilized from 2010.</p>
@@ -203,7 +194,8 @@
 			      </div>
           </div>
         </div>
-        <div class="col-10">
+        <div class="col-10" style="max-width: 75%;">
+          <!--fifth chart-->
           <div id="{{ids[4]}}"></div>
         </div>
         <div class="row pl-5">
