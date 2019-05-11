@@ -88,7 +88,7 @@ def return_figures(country=country_default):
 
     # Create second chart - line chart worst 10 countries
     # Start plots at 2000
-    selected_years = [str(x) for x in range(2000, 2019)]
+    selected_years = [str(x) for x in range(2000, date.today().year)]
     df_years = df_final[df_final.year.isin(selected_years)]
 
     # Sort countries by average difference over years
