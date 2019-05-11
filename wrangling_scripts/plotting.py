@@ -109,7 +109,12 @@ def return_figures(country=country_default):
                        y=y_val, 
                        mode='lines+markers', 
                        marker = dict(
-                           size=2.25,
+                           size=4,
+                       ),
+                       line=dict(
+                           width=4,
+                           shape='spline',
+                           smoothing=0.3,
                        ),
                        name=country)
         )
@@ -141,7 +146,12 @@ def return_figures(country=country_default):
                        y=y_val, 
                        mode='lines+markers', 
                        marker = dict(
-                           size=2.25,
+                           size=4,
+                       ),
+                       line = dict(
+                           width=4,
+                           shape='spline',
+                           smoothing=0.3,
                        ),
                        name=country)
         )
@@ -174,7 +184,12 @@ def return_figures(country=country_default):
                        y=y_val, 
                        mode='lines+markers', 
                        marker = dict(
-                           size=2.25,
+                           size=4,
+                       ),
+                       line = dict(
+                           width=4,
+                           shape='spline',
+                           smoothing=0.3,
                        ),
                        name=country)
         )
@@ -194,7 +209,7 @@ def return_figures(country=country_default):
 
     # Create fifth chart - individual country over time, stacked area chart
     # https://plot.ly/python/filled-area-plots/
-    df_country = df_years[df_years['country'] == country_filter[0]]
+    df_country = df_years[df_years['country'] == country_filter[0]].copy()
     low_median = round(df_country.value_y.median(), 2)
     high_median = round(df_country.value_x.median(), 2)
     df_country.fillna(df_country.median(), inplace=True)
@@ -205,6 +220,11 @@ def return_figures(country=country_default):
         y=df_country.value_y.tolist(),
         hoverinfo='x+y',
         mode='lines',
+        line = dict(
+            width=4,
+            shape='spline',
+            smoothing=0.3,
+                    ),
         stackgroup='one',
         name='Lowest 10%'
     )
@@ -213,6 +233,11 @@ def return_figures(country=country_default):
         y=df_country.value_x.tolist(),
         hoverinfo='x+y',
         mode='lines',
+        line = dict(
+            width=4,
+            shape='spline',
+            smoothing=0.3,
+                    ),
         stackgroup='one',
         name='Highest 10%'
     )
