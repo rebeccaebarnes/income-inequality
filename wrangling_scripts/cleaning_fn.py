@@ -83,8 +83,8 @@ def extract_data(folder_name):
     return df
 
 def select_countries(df, 
-                     select_years=[str(x) for x in range(2005, 2016)],
-                     threshold=3, values='value'):
+                     select_years=[str(x) for x in range(2005, 2019)],
+                     threshold=12, values='value'):
     """
     Extract a list of countries that has sufficient data for the selected years.
 
@@ -102,10 +102,9 @@ def select_countries(df,
     df = df[df.year.isin(select_years)]
 
     # Find countries with sufficient data for select years
-    df_pivot = df.pivot(index='country', columns='year', values=values)\
-        .reset_index()
-    df_pivot.dropna(subset=select_years, thresh=threshold, inplace=True)
-    countries = df_pivot['country']
+    df['missing'] = df['value'].isna()
+    country_missing = df.groupby('country')['missing'].sum()
+    countries = country_missing[country_missing <= 12].index.tolist()
 
     return countries
 
