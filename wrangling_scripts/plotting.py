@@ -120,7 +120,7 @@ def return_figures(country=country_default):
         )
     
     layout_two = dict(
-        title = 'Highest Income Inequality',
+        title = '<b>Highest Income Inequality</b>',
         xaxis = dict(
             title = 'Year',
             autotick = False,
@@ -157,7 +157,7 @@ def return_figures(country=country_default):
         )
     
     layout_three = dict(
-        title = 'Lowest Income Inequality',
+        title = '<b>Lowest Income Inequality</b>',
         xaxis = dict(
             title = 'Year',
             autotick = False,
@@ -195,7 +195,7 @@ def return_figures(country=country_default):
         )
     
     layout_four = dict(
-        title = 'G10 Countries',
+        title = '<b>G10 Countries</b>',
         xaxis = dict(
             title = 'Year',
             autotick = False,
@@ -246,7 +246,7 @@ def return_figures(country=country_default):
     graph_five = [trace1, trace2]
 
     layout_five = dict(
-        title='Income Distribution for Highest and Lowest 10%* <br> -- {} --'\
+        title='<b>Income Distribution for Highest and Lowest 10%</b>* <br> -- <b>{}</b> --'\
             .format(country_filter[0]),
         xaxis = dict(
             title = 'Year',
@@ -262,6 +262,9 @@ def return_figures(country=country_default):
                 y=10,
                 text=' Median for lowest 10%: {} <br> Median for highest 10%: {}'\
                     .format(low_median, high_median),
+                font = dict(
+                    size = 15
+                ),
                 showarrow=False,
                 align='left'
             ),
