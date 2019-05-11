@@ -39,8 +39,6 @@ def return_figures(country=country_default):
     df_combined['diffs'] = df_combined['value_x'] - df_combined['value_y']
 
     selected_countries = select_countries(df_highest)
-    # Exclude Indonesia because missing data is reported as zero
-    selected_countries = selected_countries[selected_countries != 'Indonesia']
 
     df_final = df_combined[df_combined.country.isin(selected_countries)]
     df_final = convert_country_code(df_final)
