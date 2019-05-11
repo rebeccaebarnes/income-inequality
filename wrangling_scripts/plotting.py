@@ -212,7 +212,8 @@ def return_figures(country=country_default):
     df_country = df_years[df_years['country'] == country_filter[0]].copy()
     low_median = round(df_country.value_y.median(), 2)
     high_median = round(df_country.value_x.median(), 2)
-    df_country.fillna(df_country.median(), inplace=True)
+    df_country.fillna(method='ffill', inplace=True)
+    df_country.fillna(method='bfill', inplace=True)
     country_years = df_country.year.tolist()
 
     trace1 = dict(
