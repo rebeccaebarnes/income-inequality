@@ -18,7 +18,7 @@ def return_figures(country=country_default):
     country_filter = list(country.values())
 
     # Complete API extraction
-    data_date = datetime(2019, 2, 13)
+    data_date = datetime(2019, 5, 11)
     current_year = str(date.today().year)
     
     params = {'format': 'json', 'per_page': '1000', 
