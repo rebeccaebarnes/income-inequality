@@ -10,10 +10,10 @@ from wrangling_scripts.plotting import return_figures
 @app.route("/index", methods=['POST', 'GET'])
 def index():
 
-    country_options = [['Argentina'], ['Belgium'], ['Brazil'], ['Canada'], 
-      ['Chile'], ['Denmark'], ['Egypt, Arab Rep.'], ['El Salvador'], 
-      ['Finland'], ['France'], ['Germany'], ['Greece'], ['Iceland'],
-      ['Iran, Islamic Rep.'], ['Ireland'], ['Italy'], ['Israel'], 
+    country_options = [['Argentina'], ['Australia'], ['Belgium'], ['Brazil'], 
+      ['Canada'], ['Chile'], ['Denmark'], ['Egypt, Arab Rep.'], 
+      ['El Salvador'], ['Finland'], ['France'], ['Germany'], ['Greece'], 
+      ['Iceland'], ['Iran, Islamic Rep.'], ['Ireland'], ['Italy'], ['Israel'], 
       ['Korea, Rep.'], ['Malaysia'], ['Mexico'], ['Netherlands'], ['Norway'],
       ['Pakistan'], ['Portugal'], ['Romania'], ['Russian Federation'], 
       ['South Africa'], ['Spain'], ['Sweden'], ['Thailand'], ['Uganda'], 
